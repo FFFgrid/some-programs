@@ -45,3 +45,4 @@ if __name__ == '__main__':
             eval(input()) #ex：输入print可直接打印出某个结点处的值
         except:
             print(None) #如果该结点不存在时就输出None
+            
