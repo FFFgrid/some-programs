@@ -47,4 +47,14 @@ def inorder(root):
             node = node.rchild  # 然后开始寻找右子树
 
         return result
+
+#中序遍历的递归实现
+def inorder_re(root):
+    if root == None:
+        return []
+    result = []
+    result += inorder_re(root.lchild)
+    result.append(root.value)
+    result += inorder_re(root.rchild)
+    return result
         
