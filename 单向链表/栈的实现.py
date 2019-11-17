@@ -6,6 +6,7 @@ class _node:
         self._next = next #下一个node的引用       
 
 class LinkedStack:
+    """Last In First Out"""
     def __init__(self):
         """create an empty Stack"""
         self._head = None
