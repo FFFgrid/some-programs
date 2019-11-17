@@ -8,8 +8,8 @@ def builttree(preorder_result, inorder_result):
         if len(preorder_result)==0:
             return 
         root=TreeNode(preorder_result[0]) #preorder_result[0]就是整个树的根
-        Index=inorder_result.index(preorder_result[0])
-        root.lchild=builttree(preorder_result[1:Index+1], inorder_result[0:Index])
+        Index=inorder_result.index(preorder_result[0]) #在中序遍历结果中找到整个树的根对应的下标序号
+        root.lchild=builttree(preorder_result[1:Index+1], inorder_result[0:Index]) #中序遍历结果的前Index个元素就是根的左子树，与之对应的先序遍历结果就是preorder_result[1:Index+1]
         root.rchild=builttree(preorder_result[Index+1:], inorder_result[Index+1:])
         return root
 
