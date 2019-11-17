@@ -14,7 +14,7 @@ class LinkedStack:
 
     def __len__(self):
         """Return the number of thr elements in the stack"""
-        return self._size()
+        return self._size
 
     def is_empty(self):
         """Return True if the stack is empty"""
