@@ -1,2 +1,2 @@
 # some programs
-经典算法python实现
+python实现
