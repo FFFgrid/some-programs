@@ -49,7 +49,7 @@ def inorder(root):
         return result
 
 #中序遍历的递归实现
-def inorder_re(root):
+def inorder_re1(root):
     if root == None:
         return []
     result = []
@@ -57,4 +57,39 @@ def inorder_re(root):
     result.append(root.value)
     result += inorder_re(root.rchild)
     return result
+
+def inorder_re2(root):
+        """递归后序遍历"""
+        if root == None:
+            return 
+        postorder_re(root.lchild)
+        print(root.value, end=' ')
+        postorder_re(root.rchild)
         
+#后序遍历的非递归实现
+def postorder(root):
+    """利用堆栈后序遍历"""
+    if root is None:
+        return 
+    stack1 = []
+    result = []
+    stack1.append(root)
+    while stack1:   # 找出后序遍历的逆序，存放在result中
+        node = stack1.pop()
+        if node.lchild:
+            stack1.append(node.lchild)
+        if node.rchild:
+            stack1.append(node.rchild)
+        result.append(node.value)
+    return result[::-1]
+
+
+
+#后序遍历的递归实现
+def postorder_re(root):
+        """递归后序遍历"""
+        if root == None:
+            return 
+        postorder_re(root.lchild)
+        postorder_re(root.rchild)
+        print(root.value, end=' ')
