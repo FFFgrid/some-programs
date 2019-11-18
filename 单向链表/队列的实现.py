@@ -27,3 +27,24 @@ class LinkedQueue:
             print('Queue is empty')
         else:
             return self._head._element
+        
+    def dequeue(self):
+        """Remove and return the first element of the queue"""
+        if self.is_empty():
+            print('Queue is empty')
+        ans = self._head._element
+        self._head = self._head._next
+        self._size -= 1
+        if self.is_empty():
+            self._tail = None
+        return ans
+
+    def enqueue(self,e):
+        """Add an element to the back of the queue"""
+        newest = self._Node(e,None) #this node will be the tail node
+        if self.is_empty():
+            self._head = newest
+        else:
+            self._tail._next = newest
+        self._tail = newest #Update reference to tail node
+        self._size += 1
